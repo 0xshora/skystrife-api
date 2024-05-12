@@ -18,7 +18,7 @@ export async function fetchRecords(tables: readonly Table[]) {
   const results = unwrap(
     await indexerClient.getLogs({
       chainId: 690,
-      address: "0x4ab7e8b94347cb0236e3de126db9c50599f7db2d",
+      address: "0x9d05cc196c87104a7196fcca41280729b505dbbf",
       filters: tables.map((table) => ({
         tableId: table.tableId,
       })),
