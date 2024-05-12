@@ -5,7 +5,6 @@ import { fetchRecords } from "./fetchRecords.js";
 const fs = require('fs');
 const path = require('path');
 
-// JSONデータをファイルに書き出す関数
 function saveDataToFile(data, filename) {
     const filePath = path.join(__dirname, filename);
     fs.writeFile(filePath, JSON.stringify(data, null, 2), (err) => {
@@ -25,9 +24,9 @@ export async function getRankings() {
   const playerMap = records.reduce((map: Record<string, Record<string, string>>, record) => {
     const { matchEntity, playerEntity, playerAddress } = record.fields;
     if (!map[matchEntity]) {
-      map[matchEntity] = {};  // matchEntity がまだ存在しない場合は新しいオブジェクトを初期化
+      map[matchEntity] = {}; 
     }
-    map[matchEntity][playerEntity] = playerAddress;  // playerEntity をキーとして playerAddress を保存
+    map[matchEntity][playerEntity] = playerAddress; 
     return map;
   }, {});
 

@@ -4,6 +4,7 @@ import { fetchRecords } from "./fetchRecords.js";
 // import { getRecipes } from "./getRecipes.js";
 // import { getMaterials } from "./getMaterials.js";
 import { getRankings } from "./getRankings.js";
+import { getNames } from "./getNames.js";
 
 const router = AutoRouter({
   format: createResponse("application/json; charset=utf-8", (data) =>
@@ -20,6 +21,10 @@ router.get("/", () => ({ message: "Have you eaten your $BUGS today?" }));
 
 router.get("/rankings", async () => {
   return await getRankings();
+});
+
+router.get("/names", async () => {
+  return await getNames();
 });
 
 // router.get("/orders", async () => {
